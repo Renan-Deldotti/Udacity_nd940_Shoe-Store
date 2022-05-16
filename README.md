@@ -3,7 +3,7 @@ App made during the process of Udacity's UD940 Nanodegree program
 
 ##Main instructions: 
 
-Must have four screens with:
+Must have five screens with:
 - Login screen: Email and password fields and labels plus create and login buttons
 - Welcome onboarding screen
 - Instructions onboarding screen
