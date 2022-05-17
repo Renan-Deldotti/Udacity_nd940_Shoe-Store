@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">Shoe Store</string>
+    <string name="logout">Logout</string>
+    <string name="hello_blank_fragment">Hello fragment</string>
+    <string name="password">Password</string>
+    <string name="welcome_login_tv_text">Hi,\n\nPlease login to have access to all the features</string>
+    <string name="username">Username</string>
+    <string name="et_username_hint">My best username</string>
+    <string name="et_password_hint">My most difficult password</string>
+    <string name="reset_password_text">Forgot your password?</string>
+    <string name="log_in">Log in</string>
+    <string name="create_account_text">Create this account</string>
+    <string name="loginOrCreateTV_text">or</string>
 </resources>
