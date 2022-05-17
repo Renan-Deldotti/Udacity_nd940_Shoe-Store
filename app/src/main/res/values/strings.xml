@@ -11,4 +11,7 @@
     <string name="log_in">Log in</string>
     <string name="create_account_text">Create this account</string>
     <string name="loginOrCreateTV_text">or</string>
+    <string name="welcome_with_username">Welcome %1$s!</string>
+    <string name="welcomeAcceptedButton_text">Sure, let\'s go!</string>
+    <string name="welcomeFriendlyTV_text">Are you ready to add some shoes on the store?</string>
 </resources>
