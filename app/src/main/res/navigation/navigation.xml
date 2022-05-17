@@ -24,5 +24,12 @@
             android:name="username"
             app:argType="string"
             app:nullable="true" />
+        <action
+            android:id="@+id/action_welcomeFragment_to_instructionsFragment"
+            app:destination="@id/instructionsFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/instructionsFragment"
+        android:name="com.test.shoestore.instructions.InstructionsFragment"
+        android:label="InstructionsFragment" />
 </navigation>

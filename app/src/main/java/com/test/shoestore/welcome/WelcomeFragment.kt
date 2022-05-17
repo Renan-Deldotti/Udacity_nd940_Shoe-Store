@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.findNavController
 import com.test.shoestore.R
 import com.test.shoestore.databinding.FragmentWelcomeBinding
 
@@ -19,12 +20,19 @@ class WelcomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         args = WelcomeFragmentArgs.fromBundle(requireArguments())
-        welcomeFragmentBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_welcome, container, false)
+        welcomeFragmentBinding =
+            DataBindingUtil.inflate(inflater, R.layout.fragment_welcome, container, false)
 
         // Add a default "Shoer" username if the field is empty
         val userName = if (args.username.isNullOrEmpty()) "Shoer" else args.username
 
-        welcomeFragmentBinding.welcomeMainTV.text = getString(R.string.welcome_with_username, userName)
+        welcomeFragmentBinding.welcomeMainTV.text =
+            getString(R.string.welcome_with_username, userName)
+
+        welcomeFragmentBinding.welcomeAcceptedButton.setOnClickListener {
+            it.findNavController()
+                .navigate(WelcomeFragmentDirections.actionWelcomeFragmentToInstructionsFragment())
+        }
 
         return welcomeFragmentBinding.root
     }

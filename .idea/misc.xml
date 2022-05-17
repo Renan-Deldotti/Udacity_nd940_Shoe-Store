@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/UsuarioPC/Documents/GitHub/Udacity_nd940_Shoe-Store/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/UsuarioPC/Documents/GitHub/Udacity_nd940_Shoe-Store/app/src/main/res/layout/fragment_instructions.xml" value="0.25" />
         <entry key="..\:/Users/UsuarioPC/Documents/GitHub/Udacity_nd940_Shoe-Store/app/src/main/res/layout/fragment_login.xml" value="0.25" />
         <entry key="..\:/Users/UsuarioPC/Documents/GitHub/Udacity_nd940_Shoe-Store/app/src/main/res/layout/fragment_welcome.xml" value="0.25" />
         <entry key="..\:/Users/UsuarioPC/Documents/GitHub/Udacity_nd940_Shoe-Store/app/src/main/res/menu/listview_logout_menu.xml" value="0.32685185185185184" />

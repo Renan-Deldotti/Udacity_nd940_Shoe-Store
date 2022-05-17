@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -11,40 +10,29 @@
 
         <TextView
             android:id="@+id/welcomeMainTV"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
+            android:layout_weight="1"
+            android:gravity="bottom"
             android:textSize="34sp"
-            app:layout_constraintBottom_toTopOf="@id/welcomeFriendlyTV"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.35"
-            app:layout_constraintVertical_chainStyle="packed"
             tools:text="Welcome John!" />
 
         <TextView
             android:id="@+id/welcomeFriendlyTV"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:layout_weight="1"
             android:text="@string/welcomeFriendlyTV_text"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@id/welcomeMainTV"
-            app:layout_constraintStart_toStartOf="@id/welcomeMainTV"
-            app:layout_constraintTop_toBottomOf="@id/welcomeMainTV" />
+            android:textSize="20sp" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/welcomeAcceptedButton"
+            style="@style/RoundedIntroductionButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:text="@string/welcomeAcceptedButton_text"
-            app:cornerRadius="32dp"
-            app:icon="@drawable/ic_arrow_forward"
-            app:iconGravity="end"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            android:layout_gravity="end"
+            android:text="@string/welcomeAcceptedButton_text" />
+    </LinearLayout>
 </layout>
