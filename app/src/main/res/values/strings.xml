@@ -22,4 +22,10 @@
     <string name="instructions_finish_text">Just as simple as that</string>
     <string name="instruction_second_step_text">Click on the plus (+) icon at the bottom right corner and fill the fields :)</string>
     <string name="start">Start</string>
+    <string name="shoeList_fab_contDesc_text">Add a new shoe button</string>
+    <string name="ssiShoeImage_cD">Shoe main photo</string>
+    <string name="name_w_colon">Name:</string>
+    <string name="description_w_colon">Description:</string>
+    <string name="company_w_colon">Company:</string>
+    <string name="size_w_colon">Size:</string>
 </resources>
