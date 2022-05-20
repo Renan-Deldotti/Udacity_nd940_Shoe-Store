@@ -28,4 +28,10 @@
     <string name="description_w_colon">Description:</string>
     <string name="company_w_colon">Company:</string>
     <string name="size_w_colon">Size:</string>
+    <string name="welcome">Welcome</string>
+    <string name="shoes">Shoes</string>
+    <string name="add_details">Add details</string>
+    <string name="shoe_details">SHOE DETAILS</string>
+    <string name="delete">Delete</string>
+    <string name="save">Save</string>
 </resources>
