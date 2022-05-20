@@ -2,6 +2,8 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- Although this layout has more children, it also follows the "list" sequence, so a
+    LinearLayout with vertical orientation is a good choice-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

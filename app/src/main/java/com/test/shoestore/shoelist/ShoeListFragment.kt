@@ -35,7 +35,6 @@ class ShoeListFragment : Fragment() {
         shoeListFragmentBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_shoe_list, container, false)
 
         shoeListViewModel.shoesList.observe(viewLifecycleOwner) { shoesList ->
-            shoeListFragmentBinding.shoesList.removeAllViews()
             shoesList.forEach {
                 val shoeItem: SingleShoeItemBinding = DataBindingUtil.inflate(inflater, R.layout.single_shoe_item, container, false)
                 shoeItem.shoe = it

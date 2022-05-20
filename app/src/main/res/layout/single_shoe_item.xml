@@ -10,6 +10,8 @@
             type="com.test.shoestore.models.Shoe" />
     </data>
 
+    <!-- This is a more complex layout, with Image and TextViews a better layout is achieved using
+    ConstraintLayout, so we can position them according to the other views -->
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -34,7 +36,7 @@
 
             <LinearLayout
                 android:id="@+id/ssiFieldLabels"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:padding="8dp"

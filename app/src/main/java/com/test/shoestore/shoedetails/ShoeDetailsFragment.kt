@@ -37,15 +37,18 @@ class ShoeDetailsFragment : Fragment() {
     }
 
     private fun saveShoe() {
-        // Set a random shoe image to looks better
-        // obs: random shoe images were downloaded from pexels.com
+        // Add some shoe images to look better
+        // obs: random shoe images are from pexels.com
         val shoeName = shoeDetailsFragmentBinding.shoeNameEt.text.toString().ifEmpty { "Unnamed" }
         val shoeSize = if (shoeDetailsFragmentBinding.shoeSizeEt.text.toString().isEmpty()) 0.00 else shoeDetailsFragmentBinding.shoeSizeEt.text.toString().toDouble()
         val shoeCompany = shoeDetailsFragmentBinding.shoeCompanyEt.text.toString().ifEmpty { "Unspecified" }
         val shoeDescription = shoeDetailsFragmentBinding.shoeDescriptionEt.text.toString().ifEmpty { "No description" }
         val shoePhoto = mutableListOf(Random.nextInt(1,6).toString())
+
+        val newShoe = Shoe(shoeName, shoeSize, shoeCompany, shoeDescription, shoePhoto)
+
         val shoeListViewModel: ShoeListViewModel by activityViewModels()
-        shoeListViewModel.insertNewShoe(Shoe(shoeName, shoeSize, shoeCompany, shoeDescription, shoePhoto))
+        shoeListViewModel.insertNewShoe(newShoe)
         findNavController().navigate(ShoeDetailsFragmentDirections.actionShoeDetailsFragmentToShoeListFragment())
     }
 }

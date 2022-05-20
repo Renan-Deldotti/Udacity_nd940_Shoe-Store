@@ -3,123 +3,146 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- Add the linear layout inside an Scrollable layout to allow
-    an infinity "Description" TextView" -->
+    <!-- This layout uses two columns, with labels and edit views
+    which are linked to each other, so the ConstraintLayout is a good choice.
+    Also, add the layout inside an ScrollView to allow
+    an "infinity" description -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             tools:context=".shoedetails.ShoeDetailsFragment">
 
             <TextView
+                android:id="@+id/shoeDetailsHeader_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_margin="16dp"
                 android:text="@string/shoe_details"
                 android:textSize="34sp"
-                android:textStyle="bold" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="60dp" />
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
+                android:id="@+id/shoeDetailsNameLabel_tv"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="16dp"
-                android:text="@string/name_w_colon" />
+                android:layout_height="0dp"
+                android:layout_marginHorizontal="8dp"
+                android:gravity="center"
+                android:text="@string/name_w_colon"
+                app:layout_constraintBottom_toBottomOf="@id/shoeName_et"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/shoeName_et" />
 
             <EditText
                 android:id="@+id/shoeName_et"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="16dp"
+                android:layout_marginTop="56dp"
+                android:layout_marginEnd="16dp"
                 android:inputType="text"
-                tools:ignore="TouchTargetSizeCheck"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/shoeCompany_et"
+                app:layout_constraintTop_toBottomOf="@id/shoeDetailsHeader_tv"
                 tools:text="Air max" />
 
             <TextView
+                android:id="@+id/shoeDetailsSizeLabel_tv"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="16dp"
-                android:text="@string/size_w_colon" />
+                android:layout_height="0dp"
+                android:layout_marginHorizontal="8dp"
+                android:gravity="center"
+                android:text="@string/size_w_colon"
+                app:layout_constraintBottom_toBottomOf="@id/shoeSize_et"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/shoeSize_et" />
 
             <EditText
                 android:id="@+id/shoeSize_et"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
                 android:inputType="numberDecimal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/shoeCompany_et"
+                app:layout_constraintTop_toBottomOf="@id/shoeName_et"
                 tools:text="42.0" />
 
             <TextView
+                android:id="@+id/shoeCompanyLabel_tv"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="16dp"
-                android:text="@string/company_w_colon" />
+                android:layout_height="0dp"
+                android:layout_marginHorizontal="8dp"
+                android:gravity="center"
+                android:text="@string/company_w_colon"
+                app:layout_constraintBottom_toBottomOf="@id/shoeCompany_et"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/shoeCompany_et" />
 
             <EditText
                 android:id="@+id/shoeCompany_et"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="16dp"
+                android:layout_margin="16dp"
                 android:inputType="text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/shoeCompanyLabel_tv"
+                app:layout_constraintTop_toBottomOf="@id/shoeSize_et"
                 tools:text="Nike" />
 
             <TextView
+                android:id="@+id/shoeDescriptionLabel_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="16dp"
-                android:text="@string/description_w_colon" />
+                android:layout_marginHorizontal="8dp"
+                android:layout_marginTop="32dp"
+                android:text="@string/description_w_colon"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/shoeCompany_et" />
 
             <EditText
                 android:id="@+id/shoeDescription_et"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="16dp"
+                android:layout_marginVertical="8dp"
                 android:gravity="start|top"
-                android:inputType="textMultiLine" />
+                android:inputType="textMultiLine"
+                app:layout_constraintTop_toBottomOf="@id/shoeDescriptionLabel_tv" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/shoeDelete_bt"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:orientation="horizontal">
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="16dp"
+                android:focusable="false"
+                android:text="@string/delete"
+                app:icon="@drawable/ic_delete"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/shoeSave_bt"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/shoeDescription_et" />
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/shoeDelete_bt"
-                    style="@style/Widget.MaterialComponents.Button.TextButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="32dp"
-                    android:layout_marginVertical="16dp"
-                    android:focusable="false"
-                    android:text="@string/delete"
-                    app:icon="@drawable/ic_delete" />
-
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/shoeSave_bt"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="32dp"
-                    android:layout_marginVertical="16dp"
-                    android:text="@string/save"
-                    app:icon="@drawable/ic_save"
-                    app:iconGravity="end" />
-            </LinearLayout>
-        </LinearLayout>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/shoeSave_bt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/save"
+                app:icon="@drawable/ic_save"
+                app:iconGravity="end"
+                app:layout_constraintBottom_toBottomOf="@id/shoeDelete_bt"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/shoeDelete_bt"
+                app:layout_constraintTop_toTopOf="@id/shoeDelete_bt" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 </layout>

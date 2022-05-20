@@ -7,7 +7,6 @@ import com.test.shoestore.models.Shoe
 
 class ShoeListViewModel : ViewModel() {
 
-
     private val _shoesList = MutableLiveData<List<Shoe>>()
     val shoesList: LiveData<List<Shoe>>
         get() = _shoesList
