@@ -11,13 +11,10 @@
         tools:context=".instructions.InstructionsFragment">
 
         <TextView
+            style="@style/InstructionsTextHeader1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="16dp"
-            android:text="@string/instructions"
-            android:textSize="34sp"
-            android:textStyle="bold" />
+            android:text="@string/instructions" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -26,31 +23,27 @@
             android:text="@string/instructions_summary_text" />
 
         <TextView
+            style="@style/InstructionsTextHeader2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="16dp"
-            android:layout_marginTop="32dp"
-            android:text="@string/first"
-            android:textSize="24sp" />
+            android:text="@string/first" />
 
         <TextView
+            style="@style/InstructionsText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
             android:text="@string/instruction_first_step_text" />
 
         <TextView
+            style="@style/InstructionsTextHeader2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="16dp"
-            android:layout_marginTop="32dp"
-            android:text="@string/then"
-            android:textSize="24sp" />
+            android:text="@string/then" />
 
         <TextView
+            style="@style/InstructionsText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
             android:text="@string/instruction_second_step_text" />
 
         <TextView

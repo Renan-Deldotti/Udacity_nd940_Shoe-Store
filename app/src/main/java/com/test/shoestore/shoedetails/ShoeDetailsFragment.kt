@@ -11,19 +11,21 @@ import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.test.shoestore.R
 import com.test.shoestore.databinding.FragmentShoeDetailsBinding
-import com.test.shoestore.models.Shoe
 import com.test.shoestore.shoelist.ShoeListViewModel
 import kotlin.random.Random
 
 class ShoeDetailsFragment : Fragment() {
 
     private lateinit var shoeDetailsFragmentBinding: FragmentShoeDetailsBinding
+    private val shoeListViewModel: ShoeListViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        shoeDetailsFragmentBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_shoe_details, container, false)
+        shoeDetailsFragmentBinding = FragmentShoeDetailsBinding.inflate(inflater, container, false)
+        shoeDetailsFragmentBinding.lifecycleOwner = this
+        shoeDetailsFragmentBinding.shoeListViewModel = shoeListViewModel
 
         shoeDetailsFragmentBinding.shoeDeleteBt.setOnClickListener {
             it.findNavController().navigate(ShoeDetailsFragmentDirections.actionShoeDetailsFragmentToShoeListFragment())
@@ -37,18 +39,7 @@ class ShoeDetailsFragment : Fragment() {
     }
 
     private fun saveShoe() {
-        // Add some shoe images to look better
-        // obs: random shoe images are from pexels.com
-        val shoeName = shoeDetailsFragmentBinding.shoeNameEt.text.toString().ifEmpty { "Unnamed" }
-        val shoeSize = if (shoeDetailsFragmentBinding.shoeSizeEt.text.toString().isEmpty()) 0.00 else shoeDetailsFragmentBinding.shoeSizeEt.text.toString().toDouble()
-        val shoeCompany = shoeDetailsFragmentBinding.shoeCompanyEt.text.toString().ifEmpty { "Unspecified" }
-        val shoeDescription = shoeDetailsFragmentBinding.shoeDescriptionEt.text.toString().ifEmpty { "No description" }
-        val shoePhoto = mutableListOf(Random.nextInt(1,6).toString())
-
-        val newShoe = Shoe(shoeName, shoeSize, shoeCompany, shoeDescription, shoePhoto)
-
-        val shoeListViewModel: ShoeListViewModel by activityViewModels()
-        shoeListViewModel.insertNewShoe(newShoe)
+        shoeListViewModel.insertNewShoe()
         findNavController().navigate(ShoeDetailsFragmentDirections.actionShoeDetailsFragmentToShoeListFragment())
     }
 }

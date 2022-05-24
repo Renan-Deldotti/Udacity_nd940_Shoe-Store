@@ -1,9 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <style name="RoundedIntroductionButton">
         <item name="cornerRadius">32dp</item>
         <item name="android:layout_margin">8dp</item>
         <item name="icon">@drawable/ic_arrow_forward</item>
         <item name="iconGravity">end</item>
+    </style>
+
+    <style name="InstructionsTextHeader1">
+        <item name="android:layout_margin">16dp</item>
+        <item name="android:textSize">34sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
+    <style name="InstructionsTextHeader2">
+        <item name="android:layout_marginStart">16dp</item>
+        <item name="android:layout_marginEnd">16dp</item>
+        <item name="android:layout_marginTop">32dp</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <style name="InstructionsText">
+        <item name="android:layout_margin">8dp</item>
+        <item name="android:lineSpacingMultiplier">1.25</item>
     </style>
 </resources>

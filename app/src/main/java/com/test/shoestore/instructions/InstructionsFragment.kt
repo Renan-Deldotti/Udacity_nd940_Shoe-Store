@@ -18,7 +18,8 @@ class InstructionsFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        instructionsFragmentBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_instructions, container, false)
+        instructionsFragmentBinding =
+            FragmentInstructionsBinding.inflate(inflater, container, false)
 
         instructionsFragmentBinding.instructionsStartBt.setOnClickListener {
             it.findNavController().navigate(

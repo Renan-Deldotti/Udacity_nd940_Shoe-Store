@@ -3,6 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+
+        <variable
+            name="shoeListViewModel"
+            type="com.test.shoestore.shoelist.ShoeListViewModel" />
+    </data>
+
     <!-- This layout uses two columns, with labels and edit views
     which are linked to each other, so the ConstraintLayout is a good choice.
     Also, add the layout inside an ScrollView to allow
@@ -47,6 +54,7 @@
                 android:layout_marginTop="56dp"
                 android:layout_marginEnd="16dp"
                 android:inputType="text"
+                android:text="@={shoeListViewModel.shoe.name}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@id/shoeCompany_et"
                 app:layout_constraintTop_toBottomOf="@id/shoeDetailsHeader_tv"
@@ -70,6 +78,7 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
                 android:inputType="numberDecimal"
+                android:text="@={`` + shoeListViewModel.shoe.size}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@id/shoeCompany_et"
                 app:layout_constraintTop_toBottomOf="@id/shoeName_et"
@@ -92,6 +101,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
                 android:inputType="text"
+                android:text="@={shoeListViewModel.shoe.company}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/shoeCompanyLabel_tv"
                 app:layout_constraintTop_toBottomOf="@id/shoeSize_et"
@@ -115,6 +125,7 @@
                 android:layout_marginVertical="8dp"
                 android:gravity="start|top"
                 android:inputType="textMultiLine"
+                android:text="@={shoeListViewModel.shoe.description}"
                 app:layout_constraintTop_toBottomOf="@id/shoeDescriptionLabel_tv" />
 
             <com.google.android.material.button.MaterialButton

@@ -38,7 +38,7 @@ class ShoeListFragment : Fragment() {
             shoesList.forEach {
                 val shoeItem: SingleShoeItemBinding = DataBindingUtil.inflate(inflater, R.layout.single_shoe_item, container, false)
                 shoeItem.shoe = it
-                val shoeImage = when (it.images[0].toInt()) {
+                val shoeImage = when (if (it.images.isNotEmpty()) it.images[0].toInt() else Random.nextInt(1,6).toString()) {
                     2 -> R.drawable.shoe_2
                     3 -> R.drawable.shoe_3
                     4 -> R.drawable.shoe_4
